@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<style>
+body { font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif; font-size: 13px; line-height: 1.5; color: #222; }
+h2 { color: #c61e28; margin-bottom: 8px; }
+ul { padding-left: 20px; }
+li { margin-bottom: 6px; }
+</style>
+</head>
+<body>
+<h2>Пакет драйвера и управления CME UF5 для macOS</h2>
+<p>Этот установщик настроит полную поддержку MIDI-контроллера <b>CME UF5 (VID 0x7104 / PID 0x2202)</b> на вашем Mac:</p>
+<ul>
+  <li><b>CMEUFMIDIDriver.plugin</b> — нативный универсальный (`arm64` + `x86_64`) драйвер CoreMIDI с поддержкой 32-буферного чтения USB Bulk IN без пропуска нот, кривых чувствительности (Velocity Curve), сдвига октав и транспонирования.</li>
+  <li><b>CME UF5 Control.app</b> — приложение в <code>/Applications</code> с живой визуализацией 9 фейдеров, 8 ручек, 6 кнопок транспорта, 49 клавиш, настройками контроллера и MIDI-монитором.</li>
+  <li><b>Logic Pro Control Surface (`UF5.device`)</b> — профиль автоматической интеграции с Logic Pro для управления микшером (8 фейдеров + Master), Smart Controls (8 регуляторов) и транспортом (Top, Rew, Fwd, Rec, Stop, Play).</li>
+  <li><b>cme-uf5-ctl</b> — консольная утилита диагностики и мониторинга.</li>
+</ul>
+</body>
+</html>
+

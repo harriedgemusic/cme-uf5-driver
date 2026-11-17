@@ -1,0 +1,34 @@
+#!/bin/zsh
+# Post-installation script for CME UF5 macOS Suite
+
+CONSOLE_USER=$(stat -f "%Su" /dev/console 2>/dev/null || true)
+if [[ -n "$CONSOLE_USER" && "$CONSOLE_USER" != "root" ]]; then
+    USER_HOME=$(dscl . -read "/Users/$CONSOLE_USER" NFSHomeDirectory 2>/dev/null | awk '{print $2}')
+    if [[ -d "$USER_HOME" ]]; then
+        # Install CoreMIDI driver in user Library as well
+        USER_MIDI_DIR="$USER_HOME/Library/Audio/MIDI Drivers"
+        mkdir -p "$USER_MIDI_DIR"
+        if [[ -d "/Library/Audio/MIDI Drivers/CMEUFMIDIDriver.plugin" ]]; then
+            rm -rf "$USER_MIDI_DIR/CMEUFMIDIDriver.plugin"
+            cp -R "/Library/Audio/MIDI Drivers/CMEUFMIDIDriver.plugin" "$USER_MIDI_DIR/"
+            chown -R "$CONSOLE_USER:staff" "$USER_MIDI_DIR/CMEUFMIDIDriver.plugin"
+        fi
+
+        # Install Logic Pro Control Surface in user's Audio Music Apps directory
+        USER_LOGIC_CME="$USER_HOME/Music/Audio Music Apps/MIDI Device Scripts/CME"
+        USER_LOGIC_CMC="$USER_HOME/Music/Audio Music Apps/MIDI Device Scripts/Central Music Co"
+        mkdir -p "$USER_LOGIC_CME" "$USER_LOGIC_CMC"
+        if [[ -d "/Library/Audio/MIDI Device Scripts/CME/UF5.device" ]]; then
+            rm -rf "$USER_LOGIC_CME/UF5.device" "$USER_LOGIC_CME/CME UF5.device" "$USER_LOGIC_CMC/CME UF MIDI Device.device"
+            cp -R "/Library/Audio/MIDI Device Scripts/CME/UF5.device" "$USER_LOGIC_CME/UF5.device"
+            cp -R "/Library/Audio/MIDI Device Scripts/CME/UF5.device" "$USER_LOGIC_CME/CME UF5.device"
+            cp -R "/Library/Audio/MIDI Device Scripts/CME/UF5.device" "$USER_LOGIC_CMC/CME UF MIDI Device.device"
+            chown -R "$CONSOLE_USER:staff" "$USER_HOME/Music/Audio Music Apps"
+        fi
+    fi
+fi
+
+# Restart MIDIServer so the driver activates immediately without reboot
+killall MIDIServer 2>/dev/null || true
+exit 0
+

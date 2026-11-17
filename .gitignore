@@ -1,0 +1,9 @@
+# macOS system files
+.DS_Store
+**/.DS_Store
+
+# Intermediate build directory (rebuilt via `make`)
+build/
+windows/build/
+*.o
+*.obj

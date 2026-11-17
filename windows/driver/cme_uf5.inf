@@ -1,0 +1,57 @@
+; ==============================================================================
+; CME UF Series USB MIDI Master Keyboards (UF5, UF6, UF7, UF8)
+; WinUSB Driver INF for Windows 10 / Windows 11 (x64, ARM64, x86)
+; Hardware ID: USB\VID_7104&PID_2202
+; ==============================================================================
+
+[Version]
+Signature   = "$Windows NT$"
+Class       = USBDevice
+ClassGUID   = {88BAE032-5A81-49F0-BC3D-A4FF138216D6}
+Provider    = %ManufacturerName%
+CatalogFile = cme_uf5.cat
+DriverVer   = 11/06/2026, 2.0.0.0
+PnpLockDown = 1
+
+[Manufacturer]
+%ManufacturerName% = CME_UF_Models, NTamd64, NTarm64, NTx86
+
+[CME_UF_Models.NTamd64]
+%DeviceName% = USB_Install, USB\VID_7104&PID_2202
+%DeviceName% = USB_Install, USB\VID_7104&PID_2202&MI_00
+
+[CME_UF_Models.NTarm64]
+%DeviceName% = USB_Install, USB\VID_7104&PID_2202
+%DeviceName% = USB_Install, USB\VID_7104&PID_2202&MI_00
+
+[CME_UF_Models.NTx86]
+%DeviceName% = USB_Install, USB\VID_7104&PID_2202
+%DeviceName% = USB_Install, USB\VID_7104&PID_2202&MI_00
+
+; ==================== Installation Sections ====================
+
+[USB_Install]
+Include = winusb.inf
+Needs   = WINUSB.NT
+
+[USB_Install.Services]
+Include = winusb.inf
+Needs   = WINUSB.NT.Services
+
+[USB_Install.HW]
+AddReg = Dev_AddReg
+
+[Dev_AddReg]
+; Custom Device Interface GUID used by CME UF5 Control & Bridge:
+; {B5B2DE41-7A71-4A59-8669-7A83E4C0B6A8}
+HKR,,DeviceInterfaceGUIDs,0x10000,"{B5B2DE41-7A71-4A59-8669-7A83E4C0B6A8}"
+
+; Disable USB Selective Suspend to guarantee zero latency during performances
+HKR,"DeviceParameters","DeviceIdleEnabled",0x00010001,0
+HKR,"DeviceParameters","DefaultIdleState",0x00010001,0
+HKR,"DeviceParameters","UserSetDeviceIdleEnabled",0x00010001,0
+
+[Strings]
+ManufacturerName = "Central Music Co. (CME) / OpenSource Community"
+DeviceName       = "CME UF Series USB MIDI Master Keyboard (WinUSB)"
+

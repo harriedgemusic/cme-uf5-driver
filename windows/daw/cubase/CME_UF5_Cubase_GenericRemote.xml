@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GenericRemoteDefinition Version="1.0">
+  <Name>CME UF5 / UF6 / UF7 / UF8 Control Surface</Name>
+  <DeviceName>CME UF5</DeviceName>
+  <ControlTable>
+    <!-- Faders 1..8 (Volume) -->
+    <Control Index="0" Name="Fader 1" Channel="1" Address="7" Max="127" Flags="1"/>
+    <Control Index="1" Name="Fader 2" Channel="2" Address="7" Max="127" Flags="1"/>
+    <Control Index="2" Name="Fader 3" Channel="3" Address="7" Max="127" Flags="1"/>
+    <Control Index="3" Name="Fader 4" Channel="4" Address="7" Max="127" Flags="1"/>
+    <Control Index="4" Name="Fader 5" Channel="5" Address="7" Max="127" Flags="1"/>
+    <Control Index="5" Name="Fader 6" Channel="6" Address="7" Max="127" Flags="1"/>
+    <Control Index="6" Name="Fader 7" Channel="7" Address="7" Max="127" Flags="1"/>
+    <Control Index="7" Name="Fader 8" Channel="8" Address="7" Max="127" Flags="1"/>
+    <!-- Master Fader -->
+    <Control Index="8" Name="Master Fader" Channel="1" Address="39" Max="127" Flags="1"/>
+
+    <!-- Knobs 1..8 -->
+    <Control Index="9"  Name="Knob 1 (Cutoff)"    Channel="1" Address="74" Max="127" Flags="1"/>
+    <Control Index="10" Name="Knob 2 (Resonance)" Channel="1" Address="71" Max="127" Flags="1"/>
+    <Control Index="11" Name="Knob 3 (Attack)"    Channel="1" Address="73" Max="127" Flags="1"/>
+    <Control Index="12" Name="Knob 4 (Release)"   Channel="1" Address="72" Max="127" Flags="1"/>
+    <Control Index="13" Name="Knob 5 (Pan)"       Channel="1" Address="10" Max="127" Flags="1"/>
+    <Control Index="14" Name="Knob 6 (Reverb)"    Channel="1" Address="91" Max="127" Flags="1"/>
+    <Control Index="15" Name="Knob 7 (Chorus)"    Channel="1" Address="93" Max="127" Flags="1"/>
+    <Control Index="16" Name="Knob 8 (Variation)" Channel="1" Address="94" Max="127" Flags="1"/>
+
+    <!-- Transport Controls -->
+    <Control Index="17" Name="Record"  Channel="1" Address="114" Max="127" Flags="1"/>
+    <Control Index="18" Name="Top/RTZ" Channel="1" Address="115" Max="127" Flags="1"/>
+    <Control Index="19" Name="Rewind"  Channel="1" Address="116" Max="127" Flags="1"/>
+    <Control Index="20" Name="Forward" Channel="1" Address="117" Max="127" Flags="1"/>
+    <Control Index="21" Name="Stop"    Channel="1" Address="118" Max="127" Flags="1"/>
+    <Control Index="22" Name="Play"    Channel="1" Address="119" Max="127" Flags="1"/>
+  </ControlTable>
+</GenericRemoteDefinition>
+

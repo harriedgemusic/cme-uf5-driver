@@ -1,0 +1,53 @@
+# ==============================================================================
+# Ableton Live User Configuration for CME UF5 / UF6 / UF7 / UF8
+# Place in: %APPDATA%\Ableton\Live [version]\Preferences\User Remote Scripts\CME_UF5\
+# ==============================================================================
+
+[Globals]
+GlobalChannel: 0
+
+[DeviceControls]
+Encoder1: 74
+Encoder2: 71
+Encoder3: 73
+Encoder4: 72
+Encoder5: 10
+Encoder6: 91
+Encoder7: 93
+Encoder8: 94
+EncoderChannel1: 0
+EncoderChannel2: 0
+EncoderChannel3: 0
+EncoderChannel4: 0
+EncoderChannel5: 0
+EncoderChannel6: 0
+EncoderChannel7: 0
+EncoderChannel8: 0
+
+[MixerControls]
+VolumeSlider1: 7
+VolumeSlider2: 7
+VolumeSlider3: 7
+VolumeSlider4: 7
+VolumeSlider5: 7
+VolumeSlider6: 7
+VolumeSlider7: 7
+VolumeSlider8: 7
+Slider1Channel: 0
+Slider2Channel: 1
+Slider3Channel: 2
+Slider4Channel: 3
+Slider5Channel: 4
+Slider6Channel: 5
+Slider7Channel: 6
+Slider8Channel: 7
+MasterVolumeSlider: 39
+MasterSliderChannel: 0
+
+[TransportControls]
+StopButton: 118
+PlayButton: 119
+RecButton: 114
+RwdButton: 116
+FfwdButton: 117
+

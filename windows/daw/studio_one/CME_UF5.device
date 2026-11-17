@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DeviceDefinition
+    vendor="Central Music Co."
+    name="CME UF5"
+    classID="{A5B3E4C1-7B82-4B9F-8A3E-2C7D6E5F4A3C}"
+    category="Keyboard"
+    native="0">
+
+  <Attributes>
+    <Attribute id="receiveFrom" value="CME UF5"/>
+    <Attribute id="sendTo" value="CME UF5"/>
+  </Attributes>
+
+  <ControlSurface>
+    <Controls>
+      <Control name="MasterFader" title="Master" type="fader" options="receive">
+        <MidiMessage status="#B0" address="39"/>
+      </Control>
+      <Control name="Play" title="Play" type="button" options="receive">
+        <MidiMessage status="#B0" address="119"/>
+      </Control>
+      <Control name="Stop" title="Stop" type="button" options="receive">
+        <MidiMessage status="#B0" address="118"/>
+      </Control>
+      <Control name="Record" title="Record" type="button" options="receive">
+        <MidiMessage status="#B0" address="114"/>
+      </Control>
+      <Control name="Rewind" title="Rewind" type="button" options="receive">
+        <MidiMessage status="#B0" address="116"/>
+      </Control>
+      <Control name="Forward" title="Forward" type="button" options="receive">
+        <MidiMessage status="#B0" address="117"/>
+      </Control>
+      <Control name="Top" title="Top" type="button" options="receive">
+        <MidiMessage status="#B0" address="115"/>
+      </Control>
+    </Controls>
+  </ControlSurface>
+</DeviceDefinition>
+

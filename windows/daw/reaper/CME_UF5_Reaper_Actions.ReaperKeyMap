@@ -1,0 +1,9 @@
+# REAPER MIDI Action Map for CME UF5 Transport
+# Import via Actions -> Show action list -> Key map -> Import
+ACT 1 0 "1007" "MIDI: CC 119" # Transport: Play
+ACT 1 0 "1016" "MIDI: CC 118" # Transport: Stop
+ACT 1 0 "1013" "MIDI: CC 114" # Transport: Record
+ACT 1 0 "40042" "MIDI: CC 115" # Transport: Go to start of project
+ACT 1 0 "40084" "MIDI: CC 116" # Transport: Rewind a little bit
+ACT 1 0 "40085" "MIDI: CC 117" # Transport: Fast forward a little bit
+

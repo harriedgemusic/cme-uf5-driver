@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<installer-gui-script minSpecVersion="2">
+    <title>CME UF5 — Драйвер, Control Center и Logic Pro Surface</title>
+    <organization>com.cme-pro</organization>
+    <domains enable_Anywhere="false" enable_currentUserHome="false" enable_localSystem="true"/>
+    <options customize="never" require-scripts="true" rootVolumeOnly="true" hostArchitectures="arm64,x86_64"/>
+    <welcome file="welcome.html" mime-type="text/html"/>
+    <conclusion file="conclusion.html" mime-type="text/html"/>
+    <choices-outline>
+        <line choice="default">
+            <line choice="com.cme-pro.uf5.suite"/>
+        </line>
+    </choices-outline>
+    <choice id="default"/>
+    <choice id="com.cme-pro.uf5.suite" visible="false">
+        <pkg-ref id="com.cme-pro.uf5.suite"/>
+    </choice>
+    <pkg-ref id="com.cme-pro.uf5.suite" version="2.0.0" onConclusion="none">CME-UF5-Component.pkg</pkg-ref>
+</installer-gui-script>
+
